@@ -1,13 +1,22 @@
-// import phone from "./phone";
-import  PasswordInput from "./password";
-import Phone from "./phone";
-const App = ()=>{
-    return(
-        <div>
-             <Phone/> 
-            <PasswordInput/>
-        </div>
-    )
+
+
+import { useState } from "react";
+import "./App.css";
+
+
+import SignUpTeacher from "./SignUpTeacher";
+
+function App() {
+  
+  return (
+    
+    <div>
+      <SignUpTeacher/>
+    </div>
+
+  );
 }
 
 export default App;
+
+

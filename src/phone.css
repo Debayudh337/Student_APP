@@ -1,54 +1,43 @@
-/* PhoneInput.css */
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .phoneInputContainer {
+.phone-container {
     display: grid;
-    grid-template-columns: 50px 50px 1fr;
-    align-items: center;
+    grid-template-columns: 0.1fr 0.4fr 0.7fr; /* Flag, Country Code, Phone Number */
     gap: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .logoContainer {
-    display: flex;
-    justify-content: center;
     align-items: center;
-  }
-  
-  .logo {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-  }
-  
-  .countryCodeContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-  }
-  
-  .countryCode {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .phoneNumberContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  .phoneInput {
     padding: 10px;
-    font-size: 16px;
-    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    /* width: 100%; */
+    /* max-width: 500px; */
+    margin: 20px auto;
+    background: white;
   }
   
-    
+  .country-flag img {
+    width: 40px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .country-code select {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid purple;
+    border-radius: 6px;
+    background-color: #fff;
+  }
+  
+  .phone-number input {
+    width: 90%;
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    margin: 0 15px 0 5px; 
+  }
+  
+  .phone-number input::placeholder {
+    color: #aaa;
+  }
+  

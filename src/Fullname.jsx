@@ -1,45 +1,50 @@
 import React, { useState } from 'react';
+import './FullName.css';
 
-import './Fullname.css';
-
-function FullNameInput() {
+const FullName = ({ setValidName }) => {
   const [fullName, setFullName] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errors, setErrors] = useState('');
 
-  // Handler for full name input change
-  const handleFullNameChange = (event) => {
-    const newName = event.target.value;
-    setFullName(newName);
-    validateFullName(newName);
+  // Basic full name validation
+  const validateFullName = (name) => {
+    // Must contain at least two words (first and last name)
+    const nameParts = name.trim().split(' ');
+    if (nameParts.length < 2) {
+      return 'Please enter both first and last name.';
+    }
+
+    // Ensure that only alphabetic characters and spaces are used
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (!nameRegex.test(name)) {
+      return 'Name must contain only alphabetic characters and spaces.';
+    }
+
+    return ''; // No errors
   };
 
-  // Validation function for full name
-  const validateFullName = (name) => {
-    // Regex to check only uppercase and lowercase letters and spaces, no special characters, and length < 20
-    const regex = /^[A-Za-z\s]{1,20}$/;
+  const handleNameChange = (e) => {
+    const newName = e.target.value;
+    setFullName(newName);
 
-    if (!regex.test(name)) {
-      setErrorMessage(
-        'Full name can only contain uppercase and lowercase letters, spaces, and must be less than 20 characters.'
-      );
-    } else {
-      setErrorMessage('');
-    }
+    const errorMessage = validateFullName(newName);
+    setErrors(errorMessage);
+
+    // If there's no error, name is valid
+    setValidName(!errorMessage);
   };
 
   return (
     <div className="fullname-container">
-      <h3>Enter Full Name:</h3>
       <input
-        type="text"
-        value={fullName}
-        onChange={handleFullNameChange}
-        placeholder="Enter Full Name"
         className="fullname-input"
+        type="text"
+        placeholder="Enter your full name"
+        value={fullName}
+        onChange={handleNameChange}
       />
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errors && <p className="fullname-error">{errors}</p>}
     </div>
   );
-}
+};
 
-export default FullNameInput;
+export default FullName;

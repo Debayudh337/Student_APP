@@ -1,44 +1,59 @@
-import React, { useState } from "react";
-import './phone.css';  // Import the CSS file
+import React, { useState } from 'react';
+import './Phone.css';
+import countries from './Countries'; // Import the countries array
 
-export default function Phone() {
-  const [phoneNumber, setPhoneNumber] = useState("");
+const Phone = ({ setValidPhone }) => {
+  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+  const [phoneNumber, setPhoneNumber] = useState('');
 
-  // Handler for phone number input change
-  const handlePhoneInputChange = (event) => {
-    const input = event.target.value;
-    // Ensure only digits are entered
-    if (/^\d*$/.test(input)) {
-      setPhoneNumber(input);
+  // Validate phone number (example: minimum length of 10)
+  const validatePhoneNumber = (number) => {
+    const phoneRegex = /^[0-9]{10,15}$/; // Basic phone number validation for digits and length
+    return phoneRegex.test(number);
+  };
+
+  const handlePhoneChange = (e) => {
+    const newPhoneNumber = e.target.value;
+    setPhoneNumber(newPhoneNumber);
+
+    // Validate phone and communicate to parent
+    if (validatePhoneNumber(newPhoneNumber)) {
+      setValidPhone(true);
+    } else {
+      setValidPhone(false);
     }
   };
 
+  const handleCountryChange = (event) => {
+    const selectedCode = event.target.value;
+    const country = countries.find((country) => country.code === selectedCode);
+    setSelectedCountry(country);
+  };
+
   return (
-    <div className="container">
-      <h3>Enter Phone Number:</h3>
-      <div className="phoneInputContainer">
-        {/* Logo */}
-        <div className="logoContainer">
-          <img src="./flag.avif" alt="logo" className="logo" />
-        </div>
-
-        {/* Country Code */}
-        <div className="countryCodeContainer">
-          <span className="countryCode">+91</span>
-        </div>
-
-        {/* Phone Number Input */}
-        <div className="phoneNumberContainer">
-          <input
-            type="text"
-            value={phoneNumber}
-            onChange={handlePhoneInputChange}
-            maxLength="10"
-            placeholder="Phone Number"
-            className="phoneInput"
-          />
-        </div>
+    <div className="phone-container">
+      <div className="country-flag">
+        <img src={selectedCountry.flag} alt={`${selectedCountry.name} Flag`} />
+      </div>
+      <div className="country-code">
+        <select value={selectedCountry.code} onChange={handleCountryChange}>
+          {countries.map((country) => (
+            <option key={country.code} value={country.code}>
+              {country.name} ({country.code})
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="phone-number">
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          value={phoneNumber}
+          onChange={handlePhoneChange}
+        />
       </div>
     </div>
   );
-}
+};
+
+export default Phone;

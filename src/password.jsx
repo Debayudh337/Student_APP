@@ -1,58 +1,68 @@
 import React, { useState } from 'react';
-import './password.css';  // Import the CSS file
+import { BiSolidHide } from "react-icons/bi";
+import { FaEye } from "react-icons/fa";
+import './Password.css';
 
-function PasswordInput() {
+const Password = ({ setValidPassword }) => {
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState([]);
 
-  // Handler for password input change
-  const handlePasswordChange = (event) => {
-    const newPassword = event.target.value;
-    setPassword(newPassword);
-    validatePassword(newPassword);
-  };
-
-  // Validation function for password
+  // Password validation
   const validatePassword = (password) => {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.*\s).{8,20}$/;
-
-    if (!regex.test(password)) {
-      setErrorMessage(
-        'Password must be 8-20 characters long, contain uppercase, lowercase, special characters, and no spaces.'
-      );
-    } else {
-      setErrorMessage('');
-    }
+    const errors = [];
+    if (!/[A-Z]/.test(password)) errors.push("At least one uppercase letter.");
+    if (!/[a-z]/.test(password)) errors.push("At least one lowercase letter.");
+    if (!/\d/.test(password)) errors.push("At least one number.");
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) errors.push("At least one special character.");
+    if (password.length < 8) errors.push("At least 8 characters long.");
+    return errors;
   };
 
-  // Toggle show/hide password
-  const toggleShowPassword = () => {
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+
+    const validationErrors = validatePassword(newPassword);
+    setErrors(validationErrors);
+
+    // If no errors, set password as valid
+    setValidPassword(validationErrors.length === 0);
+  };
+
+  // Toggle password visibility
+  const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
   return (
     <div className="password-container">
-      <h3>Create a Password:</h3>
-      <div className="password-input-grid">
-        <input
-          type={showPassword ? 'text' : 'password'}
-          value={password}
-          onChange={handlePasswordChange}
-          placeholder="Enter Password"
-          className="password-input"
-        />
-        <button
-          type="button"
-          className="toggle-button"
-          onClick={toggleShowPassword}
-        >
-          {showPassword ? 'Hide' : 'Show'}
-        </button>
-      </div>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <input
+        className="password-input"
+        type={showPassword ? 'text' : 'password'}
+        placeholder="Enter your password"
+        value={password}
+        onChange={handlePasswordChange}
+      />
+      <button
+        type="button"
+        className="password-toggle"
+        onClick={togglePasswordVisibility}
+      >
+        {showPassword ? <BiSolidHide size={22}/> : <FaEye size={22}/>}
+      </button>
+
+      {errors.length > 0 && (
+        <ul className="password-errors">
+          {errors.map((error, index) => (
+            <li key={index} style={{ color: 'red' }}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
-}
+};
 
-export default PasswordInput;
+export default Password;
