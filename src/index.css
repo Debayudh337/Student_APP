@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-*{
+
+
+* {
     margin: 0;
     padding: 0;
     border: 0;
@@ -8,11 +10,10 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    /* background-color: aliceblue; */
 }
 
-:root{
-    --color-bg: #1f1f38;
+:root {
+    /* --color-bg: #1f1f38;
     --color-bg-variant: #2c2c6c;
     --color-primary: #4db5ff;
     --color-primary-variant: rgba(77,181,255,0.4);
@@ -21,72 +22,112 @@
     --transition: all 400ms ease;
     --container-width-lg: 75%;
     --container-width-md: 86%;
-    --container-width-sm: 90%;
+    --container-width-sm: 90%; */
+
+    /*
+    --primary-color: #4a90e2;
+    --secondary-color: #50e3c2;
+    --background-color: #f5f5f5;
+    --text-color: #333333;
+    --error-color: #ff4d4d;
+    --success-color: #28a745;
+    */
+
+    --color-bg: #f6efef;   /* Background color */
+    --color-bg-variant: #fff;  /* Additional background color */
+    --color-primary: #ce14d8; /* Primary color */
+    --color-primary-variant: rgba(206, 20, 216, 0.4);  /* Variant of primary */
+    --color-white: #fff; /* White color */
+    --color-light: rgba(255, 255, 255, 0.6); /* Light color */
+    --color-disabled: #92759c;  /* Disabled button color */
+    --color-hover: #674869; /* Button hover color */
+    --color-border: #ccc; /* Border color */
+    --transition: all 400ms ease; /* Transition effects */
+    --container-width-lg: 75%; /* Large container width */
+    --container-width-md: 86%; /* Medium container width */
+    --container-width-sm: 90%; /* Small container width */
+    
+
+
+
+    --font-size-small: 0.875rem;
+    --font-size-medium: 1rem;
+    --font-size-large: 1.25rem;
+    --font-size-xlarge: 1.5rem;
+
+    --font-family-primary: 'Roboto', sans-serif;
+    --font-family-secondary: 'Arial', sans-serif;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    --border-radius-small: 4px;
+    --border-radius-medium: 8px;
+    --border-radius-large: 16px;
+
+    --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
 
-/* 
-body{
-    font-family: "Poppins", sans-serif;
-    background: var(--color-bg) ;
-    color: var(--color-white);
-    line-height: 1.7;
-} */
-
-
-/* ================ GENERAL STYLES ================= */
-
-.container{
+.container {
     width: var(--container-width-lg);
     margin: 0 auto;
 }
 
-h1, h2, h3, h4, h5{
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-weight: 500;
 }
 
-
-h1{
-    font-size: 2.5 rem;
+h1 {
+    font-size: 2.5rem;
 }
 
-section{
+section {
     margin-top: 8rem;
-    /* height: 100vh;  */
     padding-top: 1.3rem;
 }
 
-section > h2, section > h5{
+section>h2,
+section>h5 {
     text-align: center;
     color: var(--color-light);
 }
 
-section > h2{
+section>h2 {
     color: var(--color-primary);
-    margin-bottom: 3rem;   
+    margin-bottom: 3rem;
 }
 
-.text-light{
+.text-light {
     color: var(--color-light);
 }
 
-a{
+a {
     color: var(--color-primary);
     transition: var(--transition);
 }
 
-a:hover{
+a:hover {
     color: var(--color-white);
 }
 
-.btn{
+.btn {
     width: max-content;
     display: inline-block;
     color: var(--color-primary);
@@ -97,43 +138,39 @@ a:hover{
     transition: var(--transition);
 }
 
-.btn:hover{
+.btn:hover {
     background: var(--color-white);
     color: var(--color-bg);
     border-color: transparent;
 }
 
-.btn-primary{
+.btn-primary {
     background: var(--color-primary);
     color: var(--color-bg);
 }
 
-img{
+img {
     display: block;
     width: 90%;
     object-fit: cover;
 }
 
-/* ============== MEDIA QUERIES (MEDIUM DEVICES) ============== */
-
 @media screen and (max-width: 1024px) {
-    .container{
+    .container {
         width: var(--container-width-md);
     }
-    
-    section{
-        margin-top: 6 rem;
+
+    section {
+        margin-top: 6rem;
     }
 }
 
-/* ============== MEDIA QUERIES (SMALL DEVICES) ============== */
-
 @media screen and (max-width: 600px) {
-    .container{
+    .container {
         width: var(--container-width-sm);
     }
-    
-    section > h2{
-        margin-bottom: 2 rem;
+
+    section>h2 {
+        margin-bottom: 2rem;
     }
 }

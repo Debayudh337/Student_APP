@@ -1,22 +1,20 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignUpTeacher from './Pages/SignUpTeacher';
+import SignInTeacher from './Pages/SignInTeacher';
 
-
-import { useState } from "react";
-import "./App.css";
-
-
-import SignUpTeacher from "./SignUpTeacher";
-
-function App() {
-  
+const App = () => {
   return (
-    
-    <div>
-      <SignUpTeacher/>
-    </div>
-
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<SignInTeacher />} />
+          <Route path="/signup-teacher" element={<SignUpTeacher />} />
+          {/* Assuming you have more routes for other parts of the app */}
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
-
-

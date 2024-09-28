@@ -1,6 +1,6 @@
 .fullname-container {
     padding: 5px;
-    border: 2px solid #ccc;
+    border: 2px solid var(--color-border);
     border-radius: 12px;
     display: flex;
     flex-direction: column;

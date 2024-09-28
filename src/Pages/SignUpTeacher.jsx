@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import Phone from "./Phone";
-import Password from "./Password";
-import FullName from "./FullName";
+import { Link, useNavigate } from 'react-router-dom';
+
+import Phone from "../Components/Phone";
+import Password from "../Components/Password";
+import FullName from "../Components/FullName";
+
 import "./SignUpTeacher.css";
 
 const SignUpTeacher = () => {
@@ -39,7 +42,7 @@ const SignUpTeacher = () => {
             </button>
           </div>
         </form>
-        <p>Already have an account? <a href="#">Sign In here</a></p>
+        <p>Already have an account? <Link to="/">Sign In here</Link></p>
         
       </div>
     </>
