@@ -1,17 +1,45 @@
+# macOS
 .DS_*
+
+# Logs
 *.log
 logs
+
+# Backup files
 **/*.backup.*
 **/*.back.*
 
+# Node modules and Bower components
 node_modules
 bower_components
 
+# Sublime Text
 *.sublime*
 
+# Design assets
 psd
 thumb
 sketch
 
+# Environment variables
+.env
+
+# Testing coverage
+coverage/
+
+# Build directories
+build/
+dist/
+
+# Temporary and IDE files
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# npm and Yarn debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#react,nodejs
