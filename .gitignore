@@ -13,6 +13,9 @@ logs
 node_modules/
 node_modules/.cache/
 bower_components
+node_modules/
+node_modules/.cache/
+
 
 # Sublime Text
 *.sublime*
