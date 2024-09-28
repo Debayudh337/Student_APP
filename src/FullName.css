@@ -1,0 +1,26 @@
+.fullname-container {
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* max-width: 400px; */
+    background-color: white;
+    margin: 20px auto;
+  }
+  
+  .fullname-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    outline: none; /* Removes focus outline */
+  }
+  
+  .fullname-error {
+    margin-top: 5px;
+    color: red;
+    font-size: 12px;
+  }
+  

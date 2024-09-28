@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Phone from "./Phone";
 import Password from "./Password";
-import FullName from "./Fullname";
+import FullName from "./FullName";
 import "./SignUpTeacher.css";
 
 const SignUpTeacher = () => {
