@@ -10,7 +10,8 @@ logs
 **/*.back.*
 
 # Node modules and Bower components
-node_modules
+node_modules/
+node_modules/.cache/
 bower_components
 
 # Sublime Text
