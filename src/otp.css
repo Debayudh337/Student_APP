@@ -1,0 +1,56 @@
+/* OTPInput.css */
+
+.otp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .otp-inputs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .otp-input {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:disabled {
+    background-color: #ccc; /* Gray color when disabled */
+    cursor: not-allowed;
+  }
+  
+  .resend-message {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .resend-link {
+    color: #4CAF50; /* Green color for the resend link */
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .resend-link:hover {
+    color: #45a049; /* Darker green on hover */
+  }
+  

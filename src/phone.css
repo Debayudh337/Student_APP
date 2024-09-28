@@ -1,0 +1,54 @@
+/* PhoneInput.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .phoneInputContainer {
+    display: grid;
+    grid-template-columns: 50px 50px 1fr;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  
+  .countryCodeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .countryCode {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .phoneNumberContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .phoneInput {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+    
