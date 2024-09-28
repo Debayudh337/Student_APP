@@ -1,0 +1,43 @@
+.phone-container {
+    display: grid;
+    grid-template-columns: 0.1fr 0.4fr 0.7fr; /* Flag, Country Code, Phone Number */
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    /* width: 100%; */
+    /* max-width: 500px; */
+    margin: 20px auto;
+    background: white;
+  }
+  
+  .country-flag img {
+    width: 40px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .country-code select {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid purple;
+    border-radius: 6px;
+    background-color: #fff;
+  }
+  
+  .phone-number input {
+    width: 90%;
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    margin: 0 15px 0 5px; 
+  }
+  
+  .phone-number input::placeholder {
+    color: #aaa;
+  }
+  
