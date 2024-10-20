@@ -10,7 +10,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<SignInTeacher />} />
           <Route path="/signup-teacher" element={<SignUpTeacher />} />
-          {/* Assuming you have more routes for other parts of the app */}
+          
         </Routes>
       </div>
     </Router>
@@ -18,3 +18,30 @@ const App = () => {
 };
 
 export default App;
+
+
+
+// src/App.js
+// import React from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { AuthProvider } from "./Context/authContext";
+// import SignInTeacher from "./Pages/SignInTeacher";
+// import SignUpTeacher from "./Pages/SignUpTeacher";
+// // import Dashboard from "./Pages/Dashboard"; // An example of a protected route
+
+// const App = () => {
+//   return (
+//     <AuthProvider>
+//       <Router>
+//         <Routes>
+//           <Route path="/" element={<SignInTeacher />} />
+//           <Route path="/signup-teacher" element={<SignUpTeacher />} />
+//           {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+//         </Routes>
+//       </Router>
+//     </AuthProvider>
+//   );
+// };
+
+// export default App;
+

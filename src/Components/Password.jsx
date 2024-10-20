@@ -30,7 +30,7 @@ const Password = ({ setValidPassword }) => {
     setValidPassword(validationErrors.length === 0);
   };
 
-  // Toggle password visibility
+  // Toggle password visibility 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
