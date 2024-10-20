@@ -58,12 +58,18 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import Phone from "../Components/Phone";
-import Password from "../Components/Password";
-import FullName from "../Components/FullName";
 
+import FullName from "../Components/full_namecomponents";
+import { FullNameProvider } from "../Components/FullName_Context";
 import "./SignUpTeacher.css";
+import Password from "../Components/Password";
+import { PasswordProvider } from "../Components/password_context";
 
 const SignUpTeacher = () => {
+<<<<<<< HEAD
+=======
+  //Hooks for validation
+>>>>>>> b3f26bd211187b819c0e4a63c05693893d0003af
   const [validPhone, setValidPhone] = useState(false);
   const [validPassword, setValidPassword] = useState(false);
   const [validFullName, setValidFullname] = useState(false);
@@ -102,12 +108,39 @@ const SignUpTeacher = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="signup-container">
       <h2>Teacher Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <FullName setValidName={setValidFullname} />
         {nameError && <p className="error-message" style={{ color: 'red' }}>{nameError}</p>}
 
+=======
+    <>
+      <div className="signup-container">
+        <h2>Teacher Sign Up</h2>
+        <form onSubmit={handleSubmit}>
+       
+          <FullNameProvider>
+          <FullName/>
+          </FullNameProvider>
+          {/* <PasswordProvider>
+            <Password/>
+          </PasswordProvider> */}
+
+
+          
+          {/* <Phone setValidPhone={setValidPhone} />
+          <Password setValidPassword={setValidPassword} />
+
+          <div className="signup-submit">
+            <button type="submit" disabled={!validPhone || !validPassword}>
+              Sign Up
+            </button>
+          </div> */}
+        </form>
+        <p>Already have an account? <Link to="/">Sign In here</Link></p>
+>>>>>>> b3f26bd211187b819c0e4a63c05693893d0003af
         
         <Phone setValidPhone={setValidPhone} />
         {phoneError && <p className="error-message"  style={{ color: 'red' }}>{phoneError}</p>}
