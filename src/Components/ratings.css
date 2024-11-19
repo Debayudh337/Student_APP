@@ -1,0 +1,15 @@
+.ratings {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .star {
+    font-size: 24px;
+    color: #ddd; /* Default color for empty stars */
+  }
+  
+  .star.filled {
+    color: #f5c518; /* Color for filled stars */
+  }
+  
