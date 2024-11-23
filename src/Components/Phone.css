@@ -1,13 +1,11 @@
-.phone-container {
+/* .phone-container {
     display: grid;
-    grid-template-columns: 0.1fr 0.4fr 0.7fr; /* Flag, Country Code, Phone Number */
+    grid-template-columns: 0.1fr 0.4fr 0.7fr; 
     gap: 10px;
     align-items: center;
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 12px;
-    /* width: 100%; */
-    /* max-width: 500px; */
     margin: 20px auto;
     background: white;
   }
@@ -39,5 +37,50 @@
   
   .phone-number input::placeholder {
     color: #aaa;
+  }
+   */
+
+
+
+   .phone-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr 7fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+  .country-flag img {
+    width: 50px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 5px;
+  }
+  
+  .country-code select {
+    width: 100%;
+    padding: 8px;
+   border: none;
+  }
+  
+  .phone-number input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+  }
+  
+  .phone-container input,
+  select {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+  }
+  
+  .phone-number input:focus,
+  .country-code select:focus {
+    outline: none;
+    border-color: var(--color-primary);
   }
   

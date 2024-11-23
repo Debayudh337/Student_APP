@@ -1,0 +1,27 @@
+/* Progress container to hold the ovals in a horizontal line */
+.progress-container {
+    display: flex; /* Ensures ovals are arranged horizontally */
+    justify-content: space-between; /* Spreads ovals evenly */
+    align-items: center; /* Aligns ovals vertically */
+    padding: 10px;
+    background-color: #f8f9fa; /* Optional: light background */
+    border-radius: 10px; /* Optional: rounded corners for container */
+    max-width: 160px; /* Adjust width as needed */
+    margin: 20px auto; /* Center horizontally on the page */
+    gap: 5px; /* Space between ovals */
+  }
+  
+  /* Base style for each oval */
+  .progress-oval {
+    width: 30px;
+    height: 20px;
+    border-radius: 15px; /* Oval shape */
+    background-color: #ddd; /* Default gray for inactive stages */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+  }
+  
+  /* Style for active (green) ovals */
+  .progress-oval.active {
+    background-color: #28a745; /* Green for active stages */
+  }
+  

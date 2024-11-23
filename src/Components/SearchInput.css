@@ -1,0 +1,36 @@
+/* Container for the search input */
+.search-input-container {
+    position: relative;
+    width: 342px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    background-color: #F7F8FA; /* Background color */
+    border: 2px solid black; /* Border color */
+    border-radius: 23px; /* Rounded corners */
+    padding: 0 15px;
+  }
+  
+  /* Search Icon Style */
+  .search-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; /* Space between icon and text */
+  }
+  
+  /* Input Field */
+  .search-input {
+    flex-grow: 1; /* Take up remaining space */
+    height: 100%;
+    border: none; /* Remove border */
+    background: transparent; /* Transparent background */
+    font-size: 16px;
+    color: #333;
+    outline: none; /* Remove outline when clicked */
+  }
+  
+  /* Placeholder text style */
+  .search-input::placeholder {
+    color: #aaa; /* Placeholder text color */
+  }
+  

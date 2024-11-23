@@ -103,7 +103,7 @@ h2, p, a {
     width: 100%;
     padding: 10px;
     background-color: var(--color-primary);
-    color: var(--color-white);
+    color: var(--button_colour);
     border: none;
     border-radius: 6px;
     cursor: pointer;

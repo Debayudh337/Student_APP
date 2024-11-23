@@ -1,0 +1,9 @@
+:root {
+    --heading_colour: #ff3b30;
+    --error_text_colour: #ffffff;
+    --success_text_colour: #ffffff;
+    --background_colour: #ffffff;
+    --button_colour: #42d4bc;
+    --button_hover_colour: #87cefa;
+    --button_text_colour: #ffffff;
+  }

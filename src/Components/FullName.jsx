@@ -18,7 +18,7 @@ const FullName = ({ setValidName }) => {
     if (!nameRegex.test(name)) {
       return 'Name must contain only alphabetic characters and spaces.';
     }
-
+ 
     return ''; // No errors
   };
 

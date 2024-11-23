@@ -1,0 +1,66 @@
+.container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image {
+    max-width: 100px;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  img {
+    max-width: 100px;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  
+  .filePlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .circleActive {
+    background-color: green;
+  }
+  
+  .navButton {
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
