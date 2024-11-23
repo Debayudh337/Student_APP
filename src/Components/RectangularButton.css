@@ -1,0 +1,35 @@
+/* Base style for the button's rectangular container */
+.button-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    background-color: #007bff; /* Blue color for enabled button */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size for text content */
+    font-weight: bold;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for enabled button */
+  .button-box:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Style for disabled button */
+  .button-box.disabled {
+    background-color: #ccc; /* Gray color for disabled button */
+    color: #666; /* Dimmed text color for disabled state */
+    cursor: not-allowed; /* Prevent pointer click */
+  }
+  
+  /* Ensure images fit inside the button */
+  .button-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  

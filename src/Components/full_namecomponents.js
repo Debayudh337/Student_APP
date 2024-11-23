@@ -3,7 +3,7 @@ import React from 'react';
 import { useFullName } from './FullName_Context';
 import './FullName.css';
 
-const FullNamee = () => {
+const FullName = () => {
   const { fullName, errors, handleNameChange } = useFullName();
 
   return (
@@ -20,4 +20,4 @@ const FullNamee = () => {
   );
 };
 
-export default FullNamee;
+export default FullName;

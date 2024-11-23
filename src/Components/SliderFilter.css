@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+
+
+/* Wrapper for slider container */
+.slider-wrapper {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Slider container */
+  .slider-container {
+    width: 50px; /* Initially narrow */
+    height: 75%;
+    background-color: #e9e0e0; /* Very light background color */
+    position: absolute;
+    
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px; /* Rounded borders */
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Slight shadow for a subtle effect */
+  }
+  
+  /* Open state of the slider */
+  .slider-container.open {
+    width: 300px; /* Expanded width when open */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Slight shadow when expanded */
+  }
+  
+  /* Arrow button to toggle slider */
+  .slider-arrow-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Filter form styling */
+  .filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  /* Grouping filter inputs */
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filter-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+    
+  }
+  
+  h3, .filter-group label, .filter-group select {
+    font-family: 'Nunito', sans-serif; /* Set to a sans-serif font similar to select */
+    font-size: 16px; /* Match the font size of select */
+    color: #333; /* Dark color for text */
+  }
+
+  .filter-group select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Go button */
+  .go-button {
+    padding: 12px;
+    background-color: #fff;
+    color: #000000;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .go-button:hover {
+    background-color: #357ABD;
+  }
+  
+  /* Close button when slider is collapsed */
+  .close-button {
+    position: absolute;
+    top: 50%;
+    left: -40px; /* Positioned outside the panel */
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Arrow icons */
+  .arrow-icon {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .slider-container {
+      width: 50px;
+    }
+  
+    .slider-container.open {
+      width: 200px; /* For smaller screens */
+    }
+  }
+  

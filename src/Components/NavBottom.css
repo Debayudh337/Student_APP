@@ -1,0 +1,76 @@
+/* Bottom Navigation Container */
+.bottom-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Adjust as needed */
+    border-top: 1px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Left Placeholder to Balance Layout */
+  .nav-left-placeholder {
+    flex: 1;
+  }
+  
+  /* Buttons Group Centered */
+  .nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+  }
+  
+  .nav-btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .nav-btn:hover {
+    background-color: #e0e0e0; /* Button hover effect */
+  }
+  
+  .nav-btn:focus {
+    outline: 2px solid #007bff; /* Accessibility focus style */
+  }
+  
+  /* Logo Right-Aligned */
+  .nav-logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .logo-image {
+    height: 44px;
+    width: 44px; /* Maintain aspect ratio */
+  }
+
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-btn {
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+    .logo-image {
+      height: 25px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-btn {
+      font-size: 10px;
+      padding: 3px 6px;
+    }
+    .logo-image {
+      height: 20px;
+    }
+  }
+  

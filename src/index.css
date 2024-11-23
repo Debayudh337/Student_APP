@@ -97,7 +97,12 @@ h5 {
 
 h1 {
     font-size: 2.5rem;
-}
+    font-family: 'Plus Jakarta Sans', var(--font-family-primary), sans-serif; /* Fallback to primary or sans-serif */
+    font-weight: 500; /* Adjust weight if needed */
+    color: #d83d3d; /* Dark text */
+    margin: 0;
+  }
+  
 
 section {
     margin-top: 8rem;
