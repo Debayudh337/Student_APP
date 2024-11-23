@@ -1,0 +1,55 @@
+
+.dropdown-container {
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.dropdown-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dropdown-container select {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  appearance: none; /* Removes default browser styling */
+  cursor: pointer;
+}
+
+/* Add a down-arrow icon for the dropdown */
+.dropdown-container select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* For a hover effect */
+.dropdown-container select:hover {
+  border-color: #555;
+}
+
+/* Optional: Add a small arrow inside the dropdown */
+.dropdown-container select::-ms-expand {
+  display: none; /* For Internet Explorer */
+}
+
+/* Container for multiple dropdowns */
+.multi-dropdown-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.multi-dropdown-container .dropdown-container {
+  flex: 1;
+  min-width: 200px;
+}
