@@ -1,23 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom"; // To access route parameters
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import NavTop from "../Components/NavTop";
-import NavBottom from "../Components/NavBottom";
 import PageHeader from "../Components/PageHeader";
 import TeacherProfile from "../Components/TeacherProfile";
-import "./TeacherProfilePage.css"; // Custom CSS for profile page
+import "./TeacherProfilePage.css";
 
 const TeacherProfilePage = () => {
-  const { id } = useParams(); // Get teacher id from URL
+  const { id } = useParams();
   const [teacher, setTeacher] = useState(null);
-  const [activeTab, setActiveTab] = useState("summary"); // Default tab is "summary"
+  const [activeTab, setActiveTab] = useState("summary");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTeacherData = async () => {
       try {
-        
         const jsonData = await import("../Dummy/dummy.json");
         const teacherData = jsonData.tables.Teacher.find(
-          (t) => t.Teach_ID === parseInt(id) // Find teacher by id from URL
+          (t) => t.Teach_ID === Number(id)
         );
         setTeacher(teacherData);
       } catch (error) {
@@ -26,18 +25,25 @@ const TeacherProfilePage = () => {
     };
 
     fetchTeacherData();
-  }, [id]); // Fetch teacher data based on teacher ID
+  }, [id]);
 
   if (!teacher) {
     return <p>Loading teacher details...</p>;
   }
+
+  const handleRequestTrial = () => {
+    navigate(`/request-trial?teacherId=${teacher.Teach_ID}`);
+  };
+
+  const handleCall = () => {
+    window.location.href = `tel:${teacher.Phone_No}`;
+  };
 
   return (
     <div className="teacher-profile-page">
       <NavTop />
       <PageHeader heading="Profile Summary" />
 
-      {/* Navigation Tabs (Summary, Credentials) */}
       <div className="tabs">
         <button
           className={`tab ${activeTab === "summary" ? "active" : ""}`}
@@ -53,30 +59,55 @@ const TeacherProfilePage = () => {
         </button>
       </div>
 
-      <div className="profile-container">
-        {/* Reuse TeacherProfile Component */}
-        <TeacherProfile teacherId={id} />
+      <div className="profile-content">
+        <div className="profile-left">
+          <TeacherProfile teacherId={id} />
+        </div>
 
-        {/* Display Summary or Credentials Based on Active Tab */}
-        <div className="teacher-details">
-          {activeTab === "summary" ? (
-            <div className="summary">
-              <h4>Summary</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed reiciendis suscipit eligendi, hic expedita illo facere voluptate quam aperiam, accusamus ducimus voluptatum temporibus dolorum harum quae quasi eaque. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur ullam quasi laborum nisi unde recusandae animi ea similique, fugit soluta iste esse nesciunt rerum repellat accusamus possimus facilis ab quas!
-              Illo sapiente quaerat reprehenderit labore quos blanditiis repudiandae natus praesentium, deserunt id qui ullam placeat laboriosam explicabo excepturi cupiditate vero assumenda architecto itaque eius! Praesentium voluptatum ratione minus at ipsa.0</p>
-            </div>
-          ) : (
-            <div className="credentials">
-              <h4>Credentials</h4>
-              <p>Degree: {teacher.Degree}</p>
-              <p>Experience: {teacher.Experience}</p>
-              <p>Certification: {teacher.Certification}</p>
-            </div>
+        <div className="profile-right">
+          {activeTab === "summary" && (
+            <>
+              <div className="summary-section">
+                <h3>Summary</h3>
+                <p>
+                  Greetings everyone. My name is {teacher.Name}, and I'm
+                  delighted to be your child's {teacher.Subject} teacher. I have
+                  3 years of experience teaching grade 8 - 12. I'm passionate
+                  about fostering a love for learning and creating a supportive
+                  classroom environment. My goal is to make {teacher.Subject}{" "}
+                  enjoyable and help every student achieve academic success. I
+                  look forward to working with all of you!
+                </p>
+              </div>
+
+              <div className="achievement-section">
+                <h4>Achievements</h4>
+                <div className="achievement-box">
+                  I scored 100% in {teacher.Subject.toLowerCase()} in class 10
+                  and 90% in sciences always.
+                </div>
+              </div>
+
+              <div className="outcome-section">
+                <h4>Outcomes</h4>
+                <div className="outcome-box">
+                  I successfully helped 5 students increase their{" "}
+                  {teacher.Subject.toLowerCase()} score by 100%.
+                </div>
+              </div>
+
+              <div className="action-buttons">
+                <button onClick={handleRequestTrial} className="action-button">
+                  Request for Trial
+                </button>
+                <button onClick={handleCall} className="action-button">
+                  Call
+                </button>
+              </div>
+            </>
           )}
         </div>
       </div>
-
-      <NavBottom className="bottom-navigation" />
     </div>
   );
 };

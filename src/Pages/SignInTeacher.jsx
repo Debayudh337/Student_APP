@@ -1,39 +1,43 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Phone from '../Components/Phone';
-import Password from '../Components/Password';
-import './SignInTeacher.css';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Phone from "../Components/Phone";
+import Password from "../Components/Password";
+import "./SignInTeacher.css";
 
 const SignInTeacher = () => {
   const [validPhone, setValidPhone] = useState(false);
   const [validPassword, setValidPassword] = useState(false);
-  const [phone, setPhone] = useState('');
-  const [password, setPassword] = useState('');
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   // Hardcoded credentials for demo purposes
   const credentials = [
-    { phone: '9876543210', password: 'Password@123' },
-    { phone: '9876543210', password: 'Myword@456' },
+    { phone: "+919876543210", password: "Password@123" },
+    // { phone: "9876543210", password: "Myword@456" },
   ];
 
   // Handle form submission for sign-in
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Debug to verify state values
+    console.log("Phone entered:", phone);
+    console.log("Password entered:", password);
+
     // Check if credentials match the hardcoded values
     const user = credentials.find(
-      (cred) => cred.phone === phone && cred.password === password
+      (cred) => cred.phone === phone.trim() && cred.password === password.trim()
     );
 
     if (!user) {
-      alert('Invalid phone number or password.');
+      alert("Invalid phone number or password.");
       return;
     }
 
     // Successful login
-    alert('Sign in successful!');
-    navigate('/discover-teacher'); // Navigate to another route
+    // alert("Sign in successful!");
+    navigate("/discover-teacher"); // Navigate to another route
   };
 
   return (
@@ -41,20 +45,11 @@ const SignInTeacher = () => {
       <h2>Welcome Back</h2>
       <form onSubmit={handleSubmit}>
         {/* Phone Component */}
-        <Phone
-          setValidPhone={setValidPhone}
-          onChange={(value) => setPhone(value)}
-        />
-        {/* Password Component */}
-        <Password
-          setValidPassword={setValidPassword}
-          onChange={(value) => setPassword(value)}
-        />
+        <Phone setValidPhone={setValidPhone} onChange={setPhone} />
+        <Password setValidPassword={setValidPassword} onChange={setPassword} />
+
         <div className="signin-submit">
-          <button
-            type="submit"
-            disabled={!validPhone || !validPassword}
-          >
+          <button type="submit" disabled={!validPhone || !validPassword}>
             Sign In
           </button>
         </div>

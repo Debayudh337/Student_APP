@@ -13,7 +13,7 @@ const TeacherProfile = ({ teacherId }) => {
         // Simulating fetching from a local JSON file
         const jsonData = await import("../Dummy/dummy.json");
         const teacherData = jsonData.tables.Teacher.find(
-          (t) => t.Teach_ID === teacherId
+          (t) => t.Teach_ID === Number(teacherId) // Convert teacherId to a number
         );
         setTeacher(teacherData);
       } catch (error) {
@@ -32,7 +32,7 @@ const TeacherProfile = ({ teacherId }) => {
     <div className="teacher-profile">
       <Link to={`/teacher/${teacher.Teach_ID}`} className="profile-link">
         <img
-          src={teacher.Profile_photo}
+          src={teacher.Profile_photo || "default_photo.jpeg"} // Fallback if no photo
           alt={teacher.Name}
           className="profile-image"
         />
@@ -43,11 +43,13 @@ const TeacherProfile = ({ teacherId }) => {
             {[...Array(5)].map((_, index) => (
               <FaStar
                 key={index}
-                color={index < teacher.Rating ? "gold" : "lightgray"}
+                color={index < (teacher.Rating || 0) ? "gold" : "lightgray"} // Handle missing Rating
               />
             ))}
           </div>
-          <p className="rating-count">({teacher.Rated_By} people rated)</p>
+          <p className="rating-count">
+            ({teacher.Rated_By || 0} people rated) {/* Handle missing Rated_By */}
+          </p>
         </div>
       </Link>
     </div>

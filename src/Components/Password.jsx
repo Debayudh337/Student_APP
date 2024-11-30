@@ -3,12 +3,11 @@ import { BiSolidHide } from "react-icons/bi";
 import { FaEye } from "react-icons/fa";
 import './Password.css';
 
-const Password = ({ setValidPassword }) => {
+const Password = ({ setValidPassword, onChange }) => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState([]);
 
-  // Password validation
   const validatePassword = (password) => {
     const errors = [];
     if (!/[A-Z]/.test(password)) errors.push("At least one uppercase letter.");
@@ -26,11 +25,10 @@ const Password = ({ setValidPassword }) => {
     const validationErrors = validatePassword(newPassword);
     setErrors(validationErrors);
 
-    // If no errors, set password as valid
-    setValidPassword(validationErrors.length === 0);
+    setValidPassword(validationErrors.length === 0); // Notify parent
+    onChange(newPassword); // Update parent state
   };
 
-  // Toggle password visibility 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -49,7 +47,7 @@ const Password = ({ setValidPassword }) => {
         className="password-toggle"
         onClick={togglePasswordVisibility}
       >
-        {showPassword ? <BiSolidHide size={22}/> : <FaEye size={22}/>}
+        {showPassword ? <BiSolidHide size={22} /> : <FaEye size={22} />}
       </button>
 
       {errors.length > 0 && (
