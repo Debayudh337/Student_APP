@@ -11,28 +11,30 @@ export const FullNameProvider = ({ children }) => {
 
   
   const validateFullName = (name) => {
-    const nameParts = name.trim().split(' ');
+    const nameParts = name.trim().split(" ");
     if (nameParts.length < 2) {
-      return 'Please enter both first and last name.';
+      return { isValid: false, error: "Please enter both first and last name." };
     }
-
+  
     const nameRegex = /^[A-Za-z\s]+$/;
     if (!nameRegex.test(name)) {
-      return 'Name must contain only alphabetic characters and spaces.';
+      return { isValid: false, error: "Name must contain only alphabetic characters and spaces." };
     }
-
-    return '';
+  
+    return { isValid: true, error: "" };
   };
-
   
   const handleNameChange = (name) => {
     setFullName(name);
-
-    const errorMessage = validateFullName(name);
-    setErrors(errorMessage);
-
-    return !errorMessage; 
+  
+    const { isValid, error } = validateFullName(name);
+    setErrors(error);
+  
+    return isValid;
   };
+  
+  
+
 
   return (
     <FullNameContext.Provider value={{ fullName, errors, handleNameChange }}>

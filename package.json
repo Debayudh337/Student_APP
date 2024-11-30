@@ -2,7 +2,7 @@
   "name": "my_tuition",
   "version": "0.1.0",
   "private": true,
-  "author": "Debayudh Khag,Soumyajit Mondal",
+  "author": "Debayudh Khag,Soumyajit Paul",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

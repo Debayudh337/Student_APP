@@ -6,7 +6,7 @@
     padding: 10px 20px;
     background-color: #ffffff; /* Adjust as needed */
     border-top: 1px solid #ddd;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
     z-index: 1000;
@@ -59,7 +59,7 @@
       font-size: 12px;
       padding: 4px 8px;
     }
-    .logo-image {
+    .logo-image { 
       height: 25px;
     }
   }

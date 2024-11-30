@@ -1,0 +1,133 @@
+/* General styling for the page */
+.teacher-profile-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Top navigation styling */
+  .top-nav {
+    background-color: #2d3e50;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  /* Page header */
+  .page-header {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Tab navigation styling */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    background-color: #f7f7f7;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .tab.active {
+    background-color: #357abd;
+    color: #fff;
+  }
+  
+  /* Profile container layout (side-by-side for image and details) */
+  .profile-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Teacher profile image */
+  .teacher-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /* Fixed width for profile section */
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .teacher-info {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .teacher-name {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .teacher-subject {
+    color: #555;
+  }
+  
+  .teacher-rating {
+    margin-top: 10px;
+  }
+  
+  .stars {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .rating-count {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* Teacher details section */
+  .teacher-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .summary, .credentials {
+    font-size: 1rem;
+  }
+  
+  .credentials p {
+    margin: 5px 0;
+  }
+
+  .bottom-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Adjust as needed */
+    border-top: 1px solid #ddd;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .teacher-details {
+      margin-top: 20px;
+    }
+  }
+  

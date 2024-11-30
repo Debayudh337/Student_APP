@@ -4,6 +4,7 @@ import RectangularButton from "../Components/RectangularButton";
 import FileUpload from "../Components/FileUpload";
 import AddFile from "../Components/AddFile.jsx";
 import FilePreviewer from "../Components/FilePreviewer";
+import ImageInput from "../Components/image.jsx";
 
 
 function Test() {
@@ -55,7 +56,7 @@ function Test() {
         multiple={false}
         // buttonImage={buttonImage}
       />
-
+ 
       {/* Multiple file upload for Documents */}
       <FileUpload
         fileLabel="Upload Documents"
@@ -74,6 +75,10 @@ function Test() {
     <FilePreviewer files={uploadedFiles} />
     </div>
 
+    <div>
+    <ImageInput />
+    </div>
+   
     </div>
   );
 }
