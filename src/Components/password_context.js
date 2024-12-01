@@ -20,7 +20,7 @@ export const PasswordProvider= ({ children }) => {
     if (password.length < 8) errors.push("At least 8 characters long.");
     return errors;
   };
-
+ 
   const handlePasswordChange = (newPassword) => {
     setPassword(newPassword);
     const validationErrors = validatePassword(newPassword);

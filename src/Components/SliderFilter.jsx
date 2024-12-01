@@ -10,7 +10,7 @@ const SliderFilter = () => {
     setIsOpen(!isOpen);
   };
 
-  return (
+  return ( 
     <div className="slider-wrapper">
       {/* Slider Container */}
       <div className={`slider-container ${isOpen ? "open" : ""}`}>

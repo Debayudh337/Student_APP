@@ -32,7 +32,7 @@ function ImageInput() {
   };
 
   return (
-    <div className="image-input-container">
+    <div className="image-input-container"> 
       <h3>Upload an Image:</h3>
       <input
         type="file"

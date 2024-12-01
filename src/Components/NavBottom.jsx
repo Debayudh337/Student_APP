@@ -14,7 +14,7 @@ const NavBottom = () => {
       {/* Navigation Buttons */}
       <div className="nav-buttons">
         <button className="nav-btn" aria-label="Previous">
-        <BiLeftArrowCircle className="arrow"/>
+        <BiLeftArrowCircle className="arrow"/> 
         </button>
         <button className="nav-btn" aria-label="Page 1">
           1
